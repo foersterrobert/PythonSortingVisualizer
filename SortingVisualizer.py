@@ -9,14 +9,14 @@ from bar import BarS
 class SortingVisualizer:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((600, 660))
+        self.screen = pygame.display.set_mode((600, 560))
         pygame.display.set_caption("sortingVisualizer")
         self.clock = pygame.time.Clock()
         self.n = [BarS() for i in range(48)]
 
-        self.bButton = Button(self.screen, 'Bubblesort', 20, 615)
-        self.sButton = Button(self.screen, 'start', 410, 615)
-        self.rButton = Button(self.screen, 'reset', 500, 615)
+        self.bButton = Button(self.screen, 'Bubblesort', 20, 520)
+        self.sButton = Button(self.screen, 'start', 410, 520)
+        self.rButton = Button(self.screen, 'reset', 500, 520)
 
         self.started = False
 
