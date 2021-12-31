@@ -1,3 +1,3 @@
 # PythonSortingVisualizer
 
-![Sorting](/Sorting.png)
+![Sorting](assets/Sorting.png)

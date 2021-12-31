@@ -1,23 +1,29 @@
 import pygame.font
 
 WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 
-class Button():
+class TextButton():
     def __init__(self, screen, msg, x, y):
         self.x, self.y = x, y
         self.screen = screen
         self.screen_rect = screen.get_rect()
         self.msg = msg
-
         self.width, self.height = 100, 50
-        self.button_color = (0, 255, 0)
-        self.text_color = WHITE
-        self.font = pygame.font.SysFont(None, 48)
+        self.text_color = BLACK
+        self.font = pygame.font.SysFont(None, 44)
 
-        self.rect = pygame.Rect(self.x - (20), self.y - (10), self.width, self.height)
-        # self.rect.center = (self.x, self.y)
-
-
-    def draw_button(self):
+    def draw(self):
         self.msg_image = self.font.render(self.msg, True, self.text_color, None)
         self.screen.blit(self.msg_image, (self.x, self.y))
+
+class ImageButton():
+    def __init__(self, screen, image, x, y):
+        self.x, self.y = x, y
+        self.screen = screen
+        self.screen_rect = screen.get_rect()
+        self.image = pygame.image.load(image)
+        self.image = pygame.transform.scale(self.image, (42, 42))
+
+    def draw(self):
+        self.screen.blit(self.image, (self.x, self.y))

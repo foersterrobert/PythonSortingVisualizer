@@ -1,7 +1,7 @@
 import pygame
 import random
 
-class BarS:
+class Bar:
     def __init__(self):
         self.val = random.randint(1, 100)
         self.color = (200, 200, 200)
