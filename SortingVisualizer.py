@@ -83,6 +83,7 @@ class SortingVisualizer:
                     self.bars[i],self.bars[i+1] = self.bars[i+1],self.bars[i]
                     swapped = True
                     self.update_screen()
+                    self.check_events()
                     self.clock.tick(40)
                     self.bars[i+1].color = (200, 200, 200)
                 i = i+1
@@ -95,7 +96,8 @@ class SortingVisualizer:
             while j > 0 and self.bars[j].val < self.bars[j-1].val:
                 self.bars[j].color = (0, 0, 0)
                 self.bars[j], self.bars[j-1] = self.bars[j-1], self.bars[j]
-                j = j-1
+                j -= 1
                 self.update_screen()
+                self.check_events()
                 self.clock.tick(40)
                 self.bars[j].color = (200, 200, 200)
